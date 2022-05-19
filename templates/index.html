@@ -1,0 +1,31 @@
+{% extends "import.html" %} 
+{% block content %}
+
+<center>
+    <br>
+    <h2 id="app_title"><strong>Brain tumor detection using CNN.</strong></h2><br>
+    <div>
+        <strong>Upload brain MRI image here, one image at a time</strong><br>
+        <i>JPG, PNG, JPEG · Max size 5MB</i>
+    </div>
+
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+         <input type="file" name="file" class="btn btn-primary" id="imageUpload" accept=".png, .jpg, .jpeg">
+         <label class="btn btn-primary btn-lg" for="imageUpload"><span class="material-icons">file_upload</span>  Add image</label>
+    </form>
+    
+    <div class="image-section" style="display:none;">
+         <img id="imagePreview" class="img-responsive" src="#" style="width:300px;height:300px;"/><br><br>
+         <div>
+            <button type="button" class="btn btn-primary btn-lg" id="btn-predict">Predict</button>
+         </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h4 id="result">
+        <span></span>
+    </h4>
+
+</center><br><br>
+{% endblock %}
